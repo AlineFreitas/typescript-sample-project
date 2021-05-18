@@ -1,0 +1,6 @@
+{
+  "src/**/*.+(js|ts|tsx)": [
+    "eslint 'src/**' --fix",
+    "yarn test:unit"
+  ]
+}

@@ -1,10 +1,22 @@
 module.exports = {
-  extends: 'standard-with-typescript',
-  include: [
-    'src/**/*.ts',
-    'src/**/*.js'
+  extends: [
+    'standard-with-typescript',
+    'plugin:@typescript-eslint/recommended'
   ],
-  parserOptions: {
-    project: './tsconfig.json'
-  }
+  parser: '@typescript-eslint/parser',
+  env: {
+    node: true,
+    es6: true
+  },
+  plugins: [
+    '@typescript-eslint'
+  ],
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx', './src/**/*.js'],
+      parserOptions: {
+        project: ['./tsconfig.json']
+      }
+    }
+  ]
 }
